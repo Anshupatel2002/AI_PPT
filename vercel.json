@@ -5,6 +5,7 @@
     },
     "backend": {
       "root": "backend",
+      "entrypoint": "server.js",
       "functions": {
         "**/*": {
           "maxDuration": 60
