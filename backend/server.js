@@ -11,6 +11,12 @@ console.log('Port:           ', config.port);
 console.log('======================================');
 console.log('');
 
-app.listen(config.port, () => {
-  console.log(`Backend server ready and listening on http://localhost:${config.port}`);
-});
+const port = process.env.PORT || config.port || 3000;
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`Backend server ready and listening on http://localhost:${port}`);
+  });
+}
+
+module.exports = app;
