@@ -18,6 +18,10 @@ app.use(express.json({ limit: '1mb' }));
 
 // Mount routes
 app.use('/', healthRoutes);
+app.use('/api', healthRoutes);
+app.get('/api', (req, res) => {
+  res.json({ status: 'ok', service: 'Deck Draft Gemini API' });
+});
 app.use('/api', outlineRoutes);
 
 // Error handler

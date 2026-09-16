@@ -76,3 +76,24 @@ npm run build:frontend
 - **Tone & Language Options**: Supports Professional, Academic, Creative, and Minimal styles in Hindi, English, or Hinglish.
 - **Inline Editing**: Live editing for deck title, subtitle, slide titles, and individual bullet points, plus adding/removing bullets or deleting slides.
 - **PowerPoint Export**: Direct `.pptx` generation and download using `pptxgenjs` with customized widescreen layout and slide styles.
+
+## Deploying to Vercel
+
+This repository is pre-configured for one-click deployment on [Vercel](https://vercel.com).
+
+### 1. Import to Vercel
+1. Push this repository to your GitHub account (`https://github.com/Anshupatel2002/AI_PPT`).
+2. Log into [Vercel](https://vercel.com) and click **"Add New..."** → **"Project"**.
+3. Select and import your **`AI_PPT`** repository.
+4. Leave the default build settings as configured by `vercel.json`:
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `frontend/dist`
+
+### 2. Configure Environment Variables
+Before deploying, add the following Environment Variables in the Vercel project configuration:
+- `GEMINI_API_KEY`: Your Google Gemini API Key.
+- `GEMINI_MODEL`: `gemini-2.5-flash` (or `gemini-1.5-flash`).
+
+### 3. Deploy
+Click **Deploy**. Vercel will build the frontend assets and automatically serve the backend as a Serverless Function through `/api/index.js`.
+

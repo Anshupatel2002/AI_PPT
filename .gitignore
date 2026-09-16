@@ -109,3 +109,4 @@ coverage/
 .parcel-cache/
 tmp/
 temp/
+.vercel
