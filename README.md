@@ -92,7 +92,7 @@ This repository is pre-configured for one-click deployment on [Vercel](https://v
 ### 2. Configure Environment Variables
 Before deploying, add the following Environment Variables in the Vercel project configuration:
 - `GEMINI_API_KEY`: Your Google Gemini API Key.
-- `GEMINI_MODEL`: `gemini-2.5-flash` (or `gemini-1.5-flash`).
+- `GEMINI_MODEL`: `gemini-3.6-flash` (recommended).
 
 ### 3. Deploy
 Click **Deploy**. Vercel will build the frontend assets and automatically serve the backend as a Serverless Function through `/api/index.js`.
