@@ -1,0 +1,111 @@
+# ==========================================
+# Dependencies
+# ==========================================
+node_modules/
+*/node_modules/
+web_modules/
+.pnp
+.pnp.js
+
+# ==========================================
+# Personal, Secret & Environment Files
+# ==========================================
+.env
+.env.*
+*.env
+*.local
+!.env.example
+!.env.template
+
+# API Keys, Tokens & Private Credentials
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+id_rsa*
+credentials.json
+client_secret*.json
+serviceAccountKey*.json
+token.json
+secrets/
+private/
+
+# ==========================================
+# Operating System Files
+# ==========================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ==========================================
+# Logs & Diagnostic Files
+# ==========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# Runtime Data & Process Files
+# ==========================================
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================================
+# Build & Distribution Outputs
+# ==========================================
+dist/
+dist-ssr/
+build/
+out/
+coverage/
+.nyc_output/
+.turbo/
+
+# ==========================================
+# IDE & Code Editor Files
+# ==========================================
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# ==========================================
+# Cache & Temporary Files
+# ==========================================
+.cache/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+.parcel-cache/
+tmp/
+temp/

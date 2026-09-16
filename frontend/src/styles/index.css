@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #111318;
+  --color-panel: #1a1e26;
+  --color-panel-2: #222732;
+  --color-paper: #f5f1e8;
+  --color-paper-card: #f9f6f0;
+  --color-gold: #c9a227;
+  --color-gold-2: #e0b82f;
+  --color-ink: #111318;
+  --color-muted: #9ba6b2;
+  --color-muted-light: #606b7a;
+  --color-danger: #e06457;
+
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Global resets & typography */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-paper);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth keyframes */
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdownSlide 0.15s ease-out forwards;
+}
+
+.animate-spin-fast {
+  animation: spinSlow 0.7s linear infinite;
+}
