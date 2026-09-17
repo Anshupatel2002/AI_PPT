@@ -8,12 +8,26 @@ export default function EmptyState() {
         <Presentation size={28} />
       </div>
       <h2 className="font-serif text-2xl font-medium mb-3 text-paper">
-        Har achhi presentation ek achhe outline se shuru hoti hai.
+        Create a presentation from any topic
       </h2>
       <p className="text-muted text-sm leading-relaxed m-0">
-        Apna topic left side mein likhiye. Gemini structured presentation outline banayega,
-        jise aap edit karke PowerPoint file mein download kar sakte hain.
+        Enter a topic to generate an editable PowerPoint outline with clear slides,
+        useful bullet points, and a structure matched to your audience.
       </p>
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2 text-left">
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+          <strong className="block text-xs text-paper">Student mode</strong>
+          <span className="text-xs text-muted">Simple explanations and comparisons</span>
+        </div>
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+          <strong className="block text-xs text-paper">Professional mode</strong>
+          <span className="text-xs text-muted">Business context and next steps</span>
+        </div>
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+          <strong className="block text-xs text-paper">Export ready</strong>
+          <span className="text-xs text-muted">Edit slides and download PPTX</span>
+        </div>
+      </div>
     </div>
   );
 }
