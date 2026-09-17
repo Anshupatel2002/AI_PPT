@@ -73,6 +73,9 @@ npm run build:frontend
 
 ## Features
 - **AI Outline Generation**: Automatically constructs multi-slide structured presentation decks with titles and bullet points.
+- **AI PPT Generator**: Create editable PowerPoint presentations from a topic with an online AI presentation maker.
+- **Audience-aware presentations**: Generate simple student presentations, professional business presentations, pitch decks, or academic content.
+- **Multilingual support**: Create presentations in English, Hindi, Hinglish, and other supported languages.
 - **Tone & Language Options**: Supports Professional, Academic, Creative, and Minimal styles in Hindi, English, or Hinglish.
 - **Inline Editing**: Live editing for deck title, subtitle, slide titles, and individual bullet points, plus adding/removing bullets or deleting slides.
 - **PowerPoint Export**: Direct `.pptx` generation and download using `pptxgenjs` with customized widescreen layout and slide styles.

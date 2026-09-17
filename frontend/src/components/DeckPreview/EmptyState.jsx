@@ -8,11 +8,12 @@ export default function EmptyState() {
         <Presentation size={28} />
       </div>
       <h2 className="font-serif text-2xl font-medium mb-3 text-paper">
-        Create a presentation from any topic
+        AI PPT Generator for Any Topic
       </h2>
       <p className="text-muted text-sm leading-relaxed m-0">
-        Enter a topic to generate an editable PowerPoint outline with clear slides,
-        useful bullet points, and a structure matched to your audience.
+        Create an editable PowerPoint presentation with AI. Generate clear slides,
+        useful bullet points, and a structure matched to students, professionals,
+        and business audiences.
       </p>
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2 text-left">
         <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
