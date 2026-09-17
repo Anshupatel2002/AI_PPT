@@ -40,7 +40,7 @@ export default function DeckHeader({
         </button>
 
         <button
-          className="inline-flex items-center gap-2 border-0 rounded-lg py-2.5 px-4.5 bg-gold hover:bg-gold-2 text-[#111318] font-semibold text-sm cursor-pointer transition-all duration-150 shadow-md shadow-gold/20 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 border-0 rounded-lg py-2.5 px-4.5 bg-gold hover:bg-gold-2 text-[#102a3a] font-semibold text-sm cursor-pointer transition-all duration-150 shadow-md shadow-gold/20 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={onDownload}
           disabled={isExporting}
         >

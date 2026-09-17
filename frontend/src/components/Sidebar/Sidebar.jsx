@@ -43,7 +43,7 @@ export default function Sidebar({
       />
 
       <button
-        className="w-full border-0 rounded-lg py-3.5 px-4 bg-gradient-to-br from-gold to-gold-2 text-[#111318] font-semibold text-[15px] cursor-pointer flex items-center justify-center gap-2.5 transition-all duration-150 shadow-[0_4px_16px_rgba(201,162,39,0.25)] hover:brightness-105 hover:shadow-[0_6px_20px_rgba(201,162,39,0.35)] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed mt-1.5"
+        className="w-full border-0 rounded-lg py-3.5 px-4 bg-gradient-to-br from-gold to-gold-2 text-[#102a3a] font-semibold text-[15px] cursor-pointer flex items-center justify-center gap-2.5 transition-all duration-150 shadow-[0_4px_16px_rgba(201,162,39,0.25)] hover:brightness-105 hover:shadow-[0_6px_20px_rgba(201,162,39,0.35)] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed mt-1.5"
         onClick={onGenerate}
         disabled={isGenerating}
       >
