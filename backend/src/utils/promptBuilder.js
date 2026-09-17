@@ -93,7 +93,9 @@ ${AUDIENCE_FLOW[style] || AUDIENCE_FLOW.professional}
 
 10. Make the content specific to the user's topic.
 
-11. Return ONLY JSON.
+11. Do not invent precise statistics, quotes, sources or current events. If the topic needs research, state general principles instead.
+
+12. Return ONLY JSON.
 `;
 }
 

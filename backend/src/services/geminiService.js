@@ -17,12 +17,25 @@ class GeminiService {
       count
     });
 
+    const styleTemperature = {
+      student: 0.45,
+      academic: 0.35,
+      professional: 0.55,
+      creative: 0.85,
+      minimal: 0.25
+    };
+    const temperature = Number.isFinite(styleTemperature[style])
+      ? Math.min(config.geminiTemperature, styleTemperature[style])
+      : config.geminiTemperature;
+
     console.log('[GeminiService] Requesting outline from Gemini:', {
       model: config.geminiModel,
       slides: count,
       language,
       style,
-      audience: style
+      audience: style,
+      temperature,
+      maxOutputTokens: config.geminiMaxOutputTokens
     });
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(
@@ -46,8 +59,8 @@ class GeminiService {
           }
         ],
         generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 4000,
+          temperature,
+          maxOutputTokens: config.geminiMaxOutputTokens,
           responseMimeType: 'application/json'
         }
       })
