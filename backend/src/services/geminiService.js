@@ -42,31 +42,55 @@ class GeminiService {
       config.geminiModel
     )}:generateContent`;
 
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-goog-api-key': config.geminiApiKey
+    const requestBody = {
+      systemInstruction: {
+        parts: [{ text: systemPrompt }]
       },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: systemPrompt }]
-        },
-        contents: [
-          {
-            role: 'user',
-            parts: [{ text: `Topic: ${topic.trim()}` }]
-          }
-        ],
-        generationConfig: {
-          temperature,
-          maxOutputTokens: config.geminiMaxOutputTokens,
-          responseMimeType: 'application/json'
+      contents: [
+        {
+          role: 'user',
+          parts: [{ text: `Topic: ${topic.trim()}` }]
         }
-      })
-    });
+      ],
+      generationConfig: {
+        temperature,
+        maxOutputTokens: config.geminiMaxOutputTokens,
+        responseMimeType: 'application/json'
+      }
+    };
 
-    const rawResponse = await response.text();
+    let response;
+    let rawResponse;
+
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': config.geminiApiKey
+        },
+        body: JSON.stringify(requestBody)
+      });
+
+      rawResponse = await response.text();
+
+      if (response.status !== 429 || attempt === 1) {
+        break;
+      }
+
+      let retryDelayMs = 4000;
+      try {
+        const retryData = JSON.parse(rawResponse);
+        const retryMatch = retryData?.error?.message?.match(/retry in\s+([\d.]+)\s*s/i);
+        if (retryMatch) {
+          retryDelayMs = Math.min(Math.ceil(parseFloat(retryMatch[1]) * 1000), 10000);
+        }
+      } catch (_) {
+        // Use the default delay when the quota response is not JSON.
+      }
+
+      await new Promise(resolve => setTimeout(resolve, retryDelayMs));
+    }
 
     if (!response.ok) {
       console.error('[GeminiService Error] Raw response:', rawResponse);

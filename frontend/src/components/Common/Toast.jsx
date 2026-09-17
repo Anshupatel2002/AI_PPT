@@ -65,7 +65,7 @@ export default function Toast({ message, onClose, duration = 6000 }) {
     if (timeLeft !== null) {
       primaryText =
         timeLeft > 0
-          ? `Gemini request quota exceeded. Please wait  before trying again.`
+          ? `Gemini request quota exceeded. Please wait ${timeLeft}s before trying again.`
           : 'Quota cooldown complete. You can now try generating again.';
     } else {
       primaryText = 'Gemini free tier quota exceeded. Please wait a minute and try again.';
