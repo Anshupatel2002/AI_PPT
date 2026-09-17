@@ -1,0 +1,95 @@
+================================================================================
+   AI PRESENTATION GENERATOR (DECK DRAFT) - HOW TO RUN ON YOUR PC
+================================================================================
+
+PREREQUISITES:
+--------------
+Make sure Node.js (v18 or higher) is installed on your computer.
+Check by opening your Terminal / Command Prompt:
+  node -v
+  npm -v
+
+If not installed, download from: https://nodejs.org
+
+
+================================================================================
+STEP 1: INSTALL DEPENDENCIES
+================================================================================
+
+Open your terminal in the project root folder ("AI ppt project") and run:
+
+  npm run install:all
+
+(This one command will automatically install dependencies for the root,
+ backend, and frontend folders).
+
+--- OR install them manually step-by-step: ---
+1. Root:
+   npm install
+
+2. Backend:
+   cd backend
+   npm install
+   cd ..
+
+3. Frontend:
+   cd frontend
+   npm install
+   cd ..
+
+
+================================================================================
+STEP 2: SETUP ENVIRONMENT VARIABLES (.env)
+================================================================================
+
+Inside the "backend" folder, make sure there is a file named ".env".
+If it doesn't exist, create "backend/.env" with:
+
+  GEMINI_API_KEY=your_actual_gemini_api_key_here
+  GEMINI_MODEL=gemini-3.6-flash
+  PORT=3000
+
+Get a free Gemini API key here: https://aistudio.google.com/app/apikey
+
+
+================================================================================
+STEP 3: RUN THE APPLICATION
+================================================================================
+
+In the project root folder, simply run:
+
+  npm run dev
+
+This will start both:
+  1. Backend API server  -> http://localhost:3000
+  2. React Frontend App  -> http://localhost:5173
+
+Open your browser and navigate to:
+  http://localhost:5173
+
+
+================================================================================
+OPTIONAL: RUN SEPARATELY IN 2 TERMINALS
+================================================================================
+
+Terminal 1 (Backend):
+  cd backend
+  npm run dev
+
+Terminal 2 (Frontend):
+  cd frontend
+  npm run dev
+
+
+================================================================================
+TROUBLESHOOTING:
+================================================================================
+
+1. "GEMINI_API_KEY is missing":
+   Make sure you created the .env file inside the `backend` folder with your key.
+
+2. "Port 3000 or 5173 already in use":
+   Close any existing running node instances or change PORT in backend/.env.
+
+3. To stop the application:
+   Press Ctrl + C in the terminal window.
